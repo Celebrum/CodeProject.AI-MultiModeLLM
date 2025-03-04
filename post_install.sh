@@ -15,3 +15,15 @@ fi
 
 # Sometimes it just doesn't want to install this.
 # installPythonPackagesByName "CodeProject-AI-SDK"
+
+# Install Python requirements
+pip install -r requirements.txt
+
+# Set up model directory
+mkdir -p models
+
+# Initialize the module
+python multimode_llm.py --init
+
+# Test the module installation
+python multimode_llm.py --test
