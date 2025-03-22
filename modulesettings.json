@@ -38,21 +38,17 @@
         "CPAI_MODULE_MULTIMODE_MODEL_REPO":  "microsoft/Phi-3-vision-4k-instruct"
       },
 
-      "GpuOptions" : {
-        "InstallGPU": true,               // GPU support not provided
-      "GpuOptions" : {
+      "GpuOptions": {
         "InstallGPU": true,
         "EnableGPU": true,
         "AcceleratorDeviceName": null,
         "HalfPrecision": "enable"
       },
         "Platforms": [ "windows", "Linux", "macOS", "macOS-arm64" ],
-        "ModuleReleases": [               // Which server version is compatible with each version of this module.
-        "Platforms": [ "windows", "Linux", "macOS", "macOS-arm64" ],
         "ModuleReleases": [
           { "ModuleVersion": "1.0.0", "ServerVersionRange": [ "2.8.0", "2.9.0" ], "ReleaseDate": "2024-08-04", "ReleaseNotes": "Initial release" },
           { "ModuleVersion": "1.1.0", "ServerVersionRange": [ "2.9.1", ""      ], "ReleaseDate": "2024-11-19", "ReleaseNotes": "Optional image, corrections for CUDA 12" }
-        ]
+        ],
       "ModelRequirements" : [{
           "Task": "Multi-model LLM",
           "Architecture": "GGUF",
