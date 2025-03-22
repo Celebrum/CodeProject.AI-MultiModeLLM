@@ -22,10 +22,10 @@
         "AutoStart": false,
         "FilePath": "multimode_llm_adapter.py",
         "Runtime": "python3.10",
-        "RuntimeLocation": "Local",       // Can be Local, Shared or System
-        "PostStartPauseSecs": 0,          // Generally 1 if using GPU, 0 for CPU
-        "Queue": null,                    // Use default
-        "Parallelism": 1                  // 0 = Default = number of CPUs / 2
+        "RuntimeLocation": "Local",
+        "PostStartPauseSecs": 0,
+        "Queue": null,
+        "Parallelism": 1
       },
 
       "EnvironmentVariables": {
@@ -33,28 +33,26 @@
 
         "CPAI_MODULE_MULTIMODE_LLM_MODEL_DIR":      "./models",
 
-        // For loading model downloaded at install time
         "CPAI_MODULE_MULTIMODE_MODEL_FILENAME": "Phi-3-vision-4k-instruct-q4.gguf",
 
-        // For loading via llama-cpp.from_pretrained
         "CPAI_MODULE_MULTIMODE_MODEL_REPO":  "microsoft/Phi-3-vision-4k-instruct"
       },
 
       "GpuOptions" : {
         "InstallGPU": true,               // GPU support not provided
-        "EnableGPU": true,                // Will be coerced to false if InstallGPU = false
-        "AcceleratorDeviceName": null,    // = default
-        "HalfPrecision": "enable"         // 'Force', 'Enable', 'Disable': whether to force on, allow, or disable half-precision ops
+      "GpuOptions" : {
+        "InstallGPU": true,
+        "EnableGPU": true,
+        "AcceleratorDeviceName": null,
+        "HalfPrecision": "enable"
       },
-      
-      "InstallOptions" : {
         "Platforms": [ "windows", "Linux", "macOS", "macOS-arm64" ],
         "ModuleReleases": [               // Which server version is compatible with each version of this module.
+        "Platforms": [ "windows", "Linux", "macOS", "macOS-arm64" ],
+        "ModuleReleases": [
           { "ModuleVersion": "1.0.0", "ServerVersionRange": [ "2.8.0", "2.9.0" ], "ReleaseDate": "2024-08-04", "ReleaseNotes": "Initial release" },
           { "ModuleVersion": "1.1.0", "ServerVersionRange": [ "2.9.1", ""      ], "ReleaseDate": "2024-11-19", "ReleaseNotes": "Optional image, corrections for CUDA 12" }
         ]
-      },
-
       "ModelRequirements" : [{
           "Task": "Multi-model LLM",
           "Architecture": "GGUF",
